@@ -44,9 +44,7 @@ Dans le terminal Windows
 2. Pour chaque modification :
    1. Lister les modifications apportées avec `git status`
    2. Ajouter les documents modifiés avec `git add .`
-   3. Donner un libellé à l'ensemble des modifications
-
-   `git commit -m "Description de la modification"`
+   3. Donner un libellé à l'ensemble des modifications avec `git commit -m "Description de la modification"`
    4. Mettre en ligne ses modifications avec `git push`
 
 
