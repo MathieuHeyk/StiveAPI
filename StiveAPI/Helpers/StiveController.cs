@@ -6,6 +6,19 @@ namespace StiveAPI.Helpers
 	public class StiveController : DbContext
 	{
 		public DbSet<Article> Articles { get; set; }
+		public DbSet<Lieu> Lieux { get; set; }
+		public DbSet<Commande> Commandes { get; set; }
+		public DbSet<Ligne_de_commande> Ligne_des_commandes { get; set; }
+		public DbSet<Stock> Stocks { get; set; }
+		public DbSet<Inventaire> Inventaires { get; set; }
+		public DbSet<Utilisateur> utilisateurs { get; set; }
+		public DbSet<Fournisseur> Fournisseurs { get; set; }
+		public DbSet <Ròle> Ròles { get; set; }
+		public DbSet <Famille> Familles { get; set; }
+
+
+
+
 
 		public StiveController() { }
 
