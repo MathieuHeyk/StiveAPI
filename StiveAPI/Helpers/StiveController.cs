@@ -21,7 +21,6 @@ namespace StiveAPI.Helpers
 
 
 		public StiveController() { }
-
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

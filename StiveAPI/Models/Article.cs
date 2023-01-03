@@ -4,7 +4,7 @@ namespace StiveAPI.Models
 {
 	public class Article
 	{
-		[ Key ]
+		[Key]
 		public int Id { get; set; }
 
 		[Required]

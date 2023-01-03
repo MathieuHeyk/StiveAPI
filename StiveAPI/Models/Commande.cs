@@ -9,6 +9,7 @@ namespace StiveAPI.Models
 
         [Required]
         public int Date { get; set; }
+        
         [Required]
         public int Id_utilisateur { get; set; }
 
