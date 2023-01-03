@@ -13,8 +13,8 @@ namespace StiveAPI.Helpers
 		public DbSet<Inventaire> Inventaires { get; set; }
 		public DbSet<Utilisateur> utilisateurs { get; set; }
 		public DbSet<Fournisseur> Fournisseurs { get; set; }
-		public DbSet <Ròle> Ròles { get; set; }
-		public DbSet <Famille> Familles { get; set; }
+		public DbSet<Role> Roles { get; set; }
+		public DbSet<Famille> Familles { get; set; }
 
 
 
