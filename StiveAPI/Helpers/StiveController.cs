@@ -11,17 +11,12 @@ namespace StiveAPI.Helpers
 		public DbSet<Ligne_commande> Ligne_commandes { get; set; }
 		public DbSet<Stock> Stocks { get; set; }
 		public DbSet<Inventaire> Inventaires { get; set; }
-		public DbSet<Utilisateur> utilisateurs { get; set; }
+		public DbSet<Utilisateur> Utilisateurs { get; set; }
 		public DbSet<Fournisseur> Fournisseurs { get; set; }
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<Famille> Familles { get; set; }
 
-
-
-
-
 		public StiveController() { }
-
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
