@@ -10,8 +10,8 @@ using StiveAPI.Helpers;
 namespace StiveAPI.Migrations
 {
     [DbContext(typeof(StiveController))]
-    [Migration("20230102145232_Ròle")]
-    partial class Ròle
+    [Migration("20230103120944_Inventaire")]
+    partial class Inventaire
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,78 +52,95 @@ namespace StiveAPI.Migrations
 
             modelBuilder.Entity("StiveAPI.Models.Commande", b =>
                 {
-                    b.Property<int>("Id_Commande")
+                    b.Property<int>("Id_commande")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Date")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_Utilisateur")
+                    b.Property<int>("Id_utilisateur")
                         .HasColumnType("int");
 
                     b.Property<double>("Prix")
                         .HasColumnType("double");
 
-                    b.Property<string>("status")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id_Commande");
+                    b.HasKey("Id_commande");
 
                     b.ToTable("Commandes");
                 });
 
+            modelBuilder.Entity("StiveAPI.Models.Famille", b =>
+                {
+                    b.Property<int>("Id_famille")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Libellè")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id_famille");
+
+                    b.ToTable("Familles");
+                });
+
             modelBuilder.Entity("StiveAPI.Models.Fournisseur", b =>
                 {
-                    b.Property<int>("Id_Fournisseur")
+                    b.Property<int>("Id_fournisseur")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Email")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_Lieu")
+                    b.Property<int>("Id_lieu")
                         .HasColumnType("int");
 
                     b.Property<int>("Societe")
                         .HasColumnType("int");
 
-                    b.Property<int>("Telhone_Fixe")
+                    b.Property<int>("Telephone")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Fournisseur");
+                    b.HasKey("Id_fournisseur");
 
                     b.ToTable("Fournisseurs");
                 });
 
             modelBuilder.Entity("StiveAPI.Models.Inventaire", b =>
                 {
-                    b.Property<int>("Id_Inventaire")
+                    b.Property<int>("Id_inventaire")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Date")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_Utilisateur")
+                    b.Property<int>("Id_article")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id_utilisateur")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantite")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Inventaire");
+                    b.HasKey("Id_inventaire");
 
                     b.ToTable("Inventaires");
                 });
 
             modelBuilder.Entity("StiveAPI.Models.Lieu", b =>
                 {
-                    b.Property<int>("Id_Lieu")
+                    b.Property<int>("Id_lieu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Code_Postal")
+                    b.Property<int>("Code_postal")
                         .HasColumnType("int");
 
                     b.Property<string>("Nom")
@@ -144,66 +161,66 @@ namespace StiveAPI.Migrations
                     b.Property<int>("Ville")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Lieu");
+                    b.HasKey("Id_lieu");
 
                     b.ToTable("Lieux");
                 });
 
-            modelBuilder.Entity("StiveAPI.Models.Ligne_de_commande", b =>
+            modelBuilder.Entity("StiveAPI.Models.LigneCommande", b =>
                 {
-                    b.Property<int>("Id_Ligne_de_Commande")
+                    b.Property<int>("Id_ligne_commande")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_Article")
+                    b.Property<int>("Id_article")
                         .HasColumnType("int");
 
-                    b.Property<int>("Numero_de_Commande")
+                    b.Property<int>("Numero_commande")
                         .HasColumnType("int");
 
-                    b.Property<int>("quantite")
+                    b.Property<int>("Quantite")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Ligne_de_Commande");
+                    b.HasKey("Id_ligne_commande");
 
-                    b.ToTable("Ligne_des_commandes");
+                    b.ToTable("LigneCommandes");
                 });
 
-            modelBuilder.Entity("StiveAPI.Models.Ròle", b =>
+            modelBuilder.Entity("StiveAPI.Models.Role", b =>
                 {
-                    b.Property<int>("Id_Role")
+                    b.Property<int>("Id_role")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Libelle")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Role");
+                    b.HasKey("Id_role");
 
-                    b.ToTable("Ròles");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("StiveAPI.Models.Stock", b =>
                 {
-                    b.Property<int>("Id_Stock")
+                    b.Property<int>("Id_stock")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Article")
                         .HasColumnType("int");
 
-                    b.Property<string>("quantite")
+                    b.Property<string>("Quantite")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id_Stock");
+                    b.HasKey("Id_stock");
 
                     b.ToTable("Stocks");
                 });
 
             modelBuilder.Entity("StiveAPI.Models.Utilisateur", b =>
                 {
-                    b.Property<int>("Id_Utilisateur")
+                    b.Property<int>("Id_utilisateur")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -211,30 +228,30 @@ namespace StiveAPI.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Id_Lieu")
+                    b.Property<int>("Id_lieu")
                         .HasColumnType("int");
 
-                    b.Property<string>("Id_Ròle")
+                    b.Property<string>("Id_role")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Mot_de_Passe")
+                    b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Nom_de_Famille")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Prenome")
+                    b.Property<int>("Prenom")
                         .HasColumnType("int");
 
                     b.Property<int>("Telephone")
                         .HasColumnType("int");
 
-                    b.HasKey("Id_Utilisateur");
+                    b.HasKey("Id_utilisateur");
 
-                    b.ToTable("utilisateurs");
+                    b.ToTable("Utilisateurs");
                 });
 #pragma warning restore 612, 618
         }

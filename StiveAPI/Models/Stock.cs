@@ -5,10 +5,12 @@ namespace StiveAPI.Models
     public class Stock
     {
         [Key]
-        public int Id_Stock { get; set; }
+        public int Id_stock { get; set; }
+
         [Required] 
         public int Article { get; set; }
+
         [Required] 
-        public string quantite { get; set; }
+        public string Quantite { get; set; }
     }
 }

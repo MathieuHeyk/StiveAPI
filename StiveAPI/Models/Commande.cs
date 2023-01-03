@@ -5,15 +5,17 @@ namespace StiveAPI.Models
     public class Commande
     {
         [Key]
-        public int Id_Commande { get; set; }
+        public int Id_commande { get; set; }
+
         [Required]
         public int Date { get; set; }
         [Required]
-        public int Id_Utilisateur { get; set; }
+        public int Id_utilisateur { get; set; }
+
         [Required]
         public  double Prix { get; set; }
-        [Required]
-        public string status { get; set;}
 
+        [Required]
+        public string Status { get; set;}
     }
 }

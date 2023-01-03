@@ -5,20 +5,27 @@ namespace StiveAPI.Models
     public class Utilisateur
     {
         [Key]
-        public int Id_Utilisateur { get; set; }
+        public int Id_utilisateur { get; set; }
+
         [Required]
-        public string Nom_de_Famille { get; set; }
+        public string Nom { get; set; }
+
         [Required]
-        public int Prenome { get; set; }
+        public int Prenom { get; set; }
+
         [Required]
         public string Email { get; set; }
+
         [Required]
-        public string Mot_de_Passe { get; set; }
+        public string Password { get; set; }
+
         [Required]
         public int Telephone { get; set; }
+
         [Required]
-        public int Id_Lieu { get; set;}
+        public int Id_lieu { get; set;}
+
         [Required]
-        public string Id_Ròle { get; set;}
+        public string Id_role { get; set;}
     }
 }
