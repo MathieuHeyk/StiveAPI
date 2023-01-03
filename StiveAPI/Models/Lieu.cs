@@ -5,18 +5,24 @@ namespace StiveAPI.Models
     public class Lieu
     {
         [Key]
-        public int Id_Lieu { get; set; }
+        public int Id_lieu { get; set; }
+        
         [Required]
         public string Numero { get; set; }
+        
+        [Required]
         public string Nom { get; set; }
+        
         [Required]
         public string Type { get; set; }
+        
         [Required]
-        public int Ville { get; set;}
+        public int Ville { get; set; }
+        
         [Required]
-        public int Code_Postal { get; set;}
+        public int Code_postal { get; set; }
+        
         [Required]
-        public int Pays { get; set;}
-
+        public int Pays { get; set; }
     }
 }
