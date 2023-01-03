@@ -11,7 +11,7 @@ namespace StiveAPI.Models
         public int Id_article { get; set; }
 
         [Required]
-        public int  Quantite { get; set; }
+        public int Quantite { get; set; }
 
         [Required]
         public int Numero_commande { get; set; }
