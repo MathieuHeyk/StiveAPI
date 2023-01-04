@@ -13,6 +13,8 @@ namespace StiveAPI.Helpers
 
         public DbSet<Inventaire> Inventaires { get; set; }
 
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
+
         public StiveController() { }
 
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
