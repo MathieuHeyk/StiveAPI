@@ -7,7 +7,8 @@ namespace StiveAPI.Helpers
 	{
 		public DbSet<Article> Articles { get; set; }
 
-        public DbSet<Lieu> Lieux { get; set; }
+		public DbSet<Lieu> Lieux { get; set; }
+		public DbSet<Fournisseur> Fournisseurs { get; set;}
 
         public StiveController() { }
 
