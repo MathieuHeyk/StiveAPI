@@ -5,6 +5,7 @@ namespace StiveAPI.Helpers
 {
 	public class StiveController : DbContext
 	{
+		public DbSet<Commande> Commandes { get; set; }
 		public DbSet<Article> Articles { get; set; }
 
 		public DbSet<Lieu> Lieux { get; set; }
