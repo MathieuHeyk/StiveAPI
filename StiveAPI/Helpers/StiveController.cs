@@ -23,6 +23,8 @@ namespace StiveAPI.Helpers
 
 		public DbSet<LigneCommande> LigneCommandes { get; set; }
 
+		public DbSet<Stock> Stocks { get; set; }
+
 		public StiveController() { }
 
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
