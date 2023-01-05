@@ -19,6 +19,8 @@ namespace StiveAPI.Helpers
 
 		public DbSet<Role> Roles { get; set; }
 
+		public DbSet<Famille> Familles { get; set; }
+
 		public StiveController() { }
 
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
