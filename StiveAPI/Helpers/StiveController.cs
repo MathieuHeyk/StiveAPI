@@ -21,6 +21,8 @@ namespace StiveAPI.Helpers
 
 		public DbSet<Famille> Familles { get; set; }
 
+		public DbSet<LigneCommande> LigneCommandes { get; set; }
+
 		public StiveController() { }
 
 		public StiveController(DbContextOptions<StiveController> options) : base(options) { }
