@@ -33,7 +33,6 @@ namespace StiveAPI.Controllers
             using StiveController context = new();
 
             Article article = context.Articles.Where(a => a.Id == id).First();
-            article.Id =id;
             article.Nom = nom;
                 article.Prix_unitaire = prix_unitaire;
                 article.Prix_carton = prix_carton;
