@@ -42,7 +42,7 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpDelete]
+		[HttpDelete(Name ="DeleteLieu")]
 		public void DeleteLieu(int id)
 		{
 			using StiveController context = new();
