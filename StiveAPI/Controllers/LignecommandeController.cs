@@ -39,15 +39,12 @@ namespace StiveAPI.Controllers
         }
 
         [HttpDelete(Name = "DeleteLigneCommande")]
-        public void DeleteLignecommande(int id, int Id_article, int Quantite, int num_commande)
+        public void DeleteLignecommande(int id)
         {
             using StiveController context = new();
 
             LigneCommande ligneCommande = context.LigneCommandes.Where(l => l.Id_ligne_commande == id).First();
             ligneCommande.Id_ligne_commande = id;
-            ligneCommande.Id_article = Id_article;
-            ligneCommande.Quantite = Quantite;
-            ligneCommande.Num_commande = num_commande;
 
             context.Remove(ligneCommande);
             context.SaveChanges();
