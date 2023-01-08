@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StiveAPI.Helpers;
-using StiveAPI.Migrations;
 using StiveAPI.Models;
-
-
 
 namespace StiveAPI.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
 
-    public class LignecommandeController
+    public class LigneCommandeController
     {
         [HttpPost(Name = "AddLigneCommande")]
         public void AddLignecommande(int Id_article, int Quantite, int num_commande)

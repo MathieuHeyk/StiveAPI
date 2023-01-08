@@ -6,7 +6,7 @@ namespace StiveAPI.Controllers
 {
 	[ApiController]
 	[Route("[controller]/[action]")]
-	public class CommandController
+	public class CommandeController
 	{
 		[HttpPost(Name ="AddCommand")]
 		public void AddCommand(string status, double prix_total, string date, int id_utilisateur)
