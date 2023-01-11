@@ -12,12 +12,11 @@ namespace StiveAPI.Controllers
     {
         [HttpPost(Name = "AddRole")]
 
-        public void AddRole(int Role, string libelle)
+        public void AddRole( string libelle)
         {
            using StiveController context = new();
 
            Role role = new();
-            role.Id_role = Role;
             role.Libelle= libelle;
 
             context.Add(role);
