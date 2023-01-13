@@ -49,8 +49,8 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpGet(Name ="GetAllCommands")]
-		public List<Commande> GetAllCommands()
+		[HttpGet(Name ="GetAllCommande")]
+		public List<Commande> GetAllCommande()
 		{
 			using StiveController context = new();
 
@@ -58,7 +58,7 @@ namespace StiveAPI.Controllers
 			return commandes;
 		}
 
-		[HttpGet(Name ="GetCommandById")]
+		[HttpGet(Name ="GetCommandeById")]
 		public Commande GetCommandeById(int id)
 		{
 			using StiveController context = new();
