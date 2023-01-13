@@ -39,6 +39,17 @@ namespace StiveAPI.Controllers
             context.SaveChanges();
         }
 
+        [HttpDelete(Name = "DeleteInventaire")]
+        public void DeleteInventaire(int id)
+        {
+            using StiveController context = new();
+
+            Inventaire inventaire = context.Inventaires.Where(a => a.Id_inventaire == id).First();
+
+            context.Remove(inventaire);
+            context.SaveChanges();
+        }
+
         [HttpGet(Name = "GetAllInventaire")]
         public List<Inventaire> GetAllInventaire()
         {
@@ -55,17 +66,6 @@ namespace StiveAPI.Controllers
 
             Inventaire inventaire = context.Inventaires.Where(a => a.Id_inventaire == id).First();
             return inventaire;
-        }
-
-        [HttpDelete(Name = "DeleteInventaire")]
-        public void DeleteInventaire(int id)
-        {
-            using StiveController context = new();
-
-            Inventaire inventaire = context.Inventaires.Where(a => a.Id_inventaire == id).First();
-
-            context.Remove(inventaire);
-            context.SaveChanges();
         }
     }
 }

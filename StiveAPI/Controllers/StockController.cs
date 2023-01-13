@@ -34,7 +34,7 @@ namespace StiveAPI.Controllers
             context.SaveChanges();
         }
 
-        [HttpPut(Name = "DeleteStock")]
+        [HttpDelete(Name = "DeleteStock")]
         public void DeleteStock(int id)
         {
             using StiveController context = new();

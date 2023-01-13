@@ -8,8 +8,8 @@ namespace StiveAPI.Controllers
 	[Route("[controller]/[action]")]
 	public class CommandeController
 	{
-		[HttpPost(Name ="AddCommand")]
-		public void AddCommand(string status, double prix_total, string date, int id_utilisateur)
+		[HttpPost(Name ="AddCommande")]
+		public void AddCommande(string status, double prix_total, string date, int id_utilisateur)
 		{
 			using StiveController context = new();
 
@@ -23,8 +23,8 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpPut(Name ="EditCommand")]
-		public void EditCommand(int id, string status, double prix_total, string date, int id_utilisateur)
+		[HttpPut(Name ="EditCommande")]
+		public void EditCommande(int id, string status, double prix_total, string date, int id_utilisateur)
 		{
 			using StiveController context = new();
 
@@ -38,8 +38,8 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpDelete(Name ="DeleteCommand")]
-		public void DeleteCommand(int id)
+		[HttpDelete(Name ="DeleteCommande")]
+		public void DeleteCommande(int id)
 		{
 			using StiveController context = new();
 

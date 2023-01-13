@@ -9,7 +9,7 @@ namespace StiveAPI.Controllers
     public class LigneCommandeController
     {
         [HttpPost(Name = "AddLigneCommande")]
-        public void AddLignecommande(int Id_article, int Quantite, int num_commande)
+        public void AddLigneCommande(int Id_article, int Quantite, int num_commande)
         {
             using StiveController context = new();
 
@@ -23,7 +23,7 @@ namespace StiveAPI.Controllers
         }
 
         [HttpPut(Name = "EditLigneCommande")]
-        public void EditLignecommande(int id, int Id_article, int Quantite, int num_commande)
+        public void EditLigneCommande(int id, int Id_article, int Quantite, int num_commande)
         {
             using StiveController context = new();
 
@@ -37,7 +37,7 @@ namespace StiveAPI.Controllers
         }
 
         [HttpDelete(Name = "DeleteLigneCommande")]
-        public void DeleteLignecommande(int id)
+        public void DeleteLigneCommande(int id)
         {
             using StiveController context = new();
 
