@@ -2,7 +2,6 @@
 using StiveAPI.Helpers;
 using StiveAPI.Models;
 
-
 namespace StiveAPI.Controllers
 {
     [ApiController]
@@ -14,6 +13,7 @@ namespace StiveAPI.Controllers
         {
             using StiveController context = new();
             Utilisateur utilisateur = new();
+
             utilisateur.Nom=Nom;
             utilisateur.Prenom=Prenom;
             utilisateur.Email=Email;
@@ -21,6 +21,7 @@ namespace StiveAPI.Controllers
             utilisateur.Telephone=Telephone;
             utilisateur.Id_role=Id_role;
             utilisateur.Id_lieu=Id_lieu;
+         
             context.Add(utilisateur);
             context.SaveChanges();
         }
