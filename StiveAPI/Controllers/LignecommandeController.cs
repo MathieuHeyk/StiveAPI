@@ -6,13 +6,13 @@ namespace StiveAPI.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-
     public class LigneCommandeController
     {
         [HttpPost(Name = "AddLigneCommande")]
         public void AddLignecommande(int Id_article, int Quantite, int num_commande)
         {
             using StiveController context = new();
+
             LigneCommande ligneCommande = new();
             ligneCommande.Id_article = Id_article;
             ligneCommande.Quantite = Quantite;
@@ -21,12 +21,13 @@ namespace StiveAPI.Controllers
             context.Add(ligneCommande);
             context.SaveChanges();
         }
+
         [HttpPut(Name = "EditLigneCommande")]
         public void EditLignecommande(int id, int Id_article, int Quantite, int num_commande)
         {
             using StiveController context = new();
 
-           LigneCommande ligneCommande = context.LigneCommandes.Where(l => l.Id_ligne_commande == id).First();
+            LigneCommande ligneCommande = context.LigneCommandes.Where(l => l.Id_ligne_commande == id).First();
             ligneCommande.Id_article = Id_article;
             ligneCommande.Quantite = Quantite;
             ligneCommande.Num_commande = num_commande;
@@ -56,7 +57,7 @@ namespace StiveAPI.Controllers
             return ligneCommandes;
         }
 
-        [HttpGet(Name = "GetLignecommandeById")]
+        [HttpGet(Name = "GetLigneCommandeById")]
         public LigneCommande GetLigneCommandeById(int id)
         {
             using StiveController context = new();
