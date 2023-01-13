@@ -49,8 +49,8 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpGet(Name ="GetAllFournisseurs")]
-		public List<Fournisseur> GetAllFournisseurs()
+		[HttpGet(Name ="GetAllFournisseur")]
+		public List<Fournisseur> GetAllFournisseur()
 		{
 			using StiveController context = new();
 
