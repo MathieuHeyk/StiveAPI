@@ -13,13 +13,14 @@ namespace StiveAPI.Controllers
         {
             using StiveController context = new();
 
-            Stock stock = new ();
+            Stock stock = new();
             stock.Id_article= Id_article;
             stock.Quantite= quantite;
 
             context.Add(stock);
             context.SaveChanges();
         }
+
         [HttpPut(Name = "EditStock")]
         public void EditStock(int Id_stock, int Id_article, int quantite)
         {
@@ -28,10 +29,12 @@ namespace StiveAPI.Controllers
             Stock stock = context.Stocks.Where(c => c.Id_stock == Id_stock).First();
             stock.Id_article = Id_article;
             stock.Quantite= quantite;
+
             context.Update(stock);
             context.SaveChanges();
         }
-        [HttpPut(Name = "DeleteStock")]
+
+        [HttpDelete(Name = "DeleteStock")]
         public void DeleteStock(int id)
         {
             using StiveController context = new();
@@ -41,6 +44,7 @@ namespace StiveAPI.Controllers
             context.Remove(stock);
             context.SaveChanges();
         }
+
         [HttpGet(Name = "GetAllStock")]
         public List<Stock> GetAllStock()
         {
@@ -49,14 +53,14 @@ namespace StiveAPI.Controllers
             List<Stock> stock = context.Stocks.ToList();
             return stock;
         }
+
         [HttpGet(Name = "GetStockById")]
         public Stock GetStockById(int id)
         {
             using StiveController context = new();
+
             Stock stock = context.Stocks.Where(c => c.Id_stock == id).First();
             return stock;
         }
-
-
     }
 }

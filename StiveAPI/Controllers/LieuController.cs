@@ -53,8 +53,8 @@ namespace StiveAPI.Controllers
 			context.SaveChanges();
 		}
 
-		[HttpGet(Name ="GetAllLieux")]
-		public List<Lieu> GetAllLieux()
+		[HttpGet(Name ="GetAllLieu")]
+		public List<Lieu> GetAllLieu()
 		{
 			using StiveController context = new();
 

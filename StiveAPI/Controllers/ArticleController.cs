@@ -11,20 +11,18 @@ namespace StiveAPI.Controllers
         [HttpPost(Name ="AddArticle")]
         public void AddArticle(string nom , double prix_unitaire, double prix_carton,int annee, int id_famille, int id_fournisseur)
         {
+            using StiveController context = new();
 
-      
-         using StiveController context = new ();
-        Article article = new Article();
+            Article article = new();
             article.Nom = nom;
             article.Prix_unitaire = prix_unitaire;
             article.Prix_carton = prix_carton;
             article.Annee = annee;
             article.ID_famille = id_famille;
             article.ID_fournisseur = id_fournisseur;
+
             context.Add(article);
             context.SaveChanges();
-
-
         }
 
         [HttpPut(Name = "EditArticle")]
@@ -34,33 +32,29 @@ namespace StiveAPI.Controllers
 
             Article article = context.Articles.Where(a => a.Id == id).First();
             article.Nom = nom;
-                article.Prix_unitaire = prix_unitaire;
-                article.Prix_carton = prix_carton;
-                article.Annee = annee;
-                article.ID_famille = id_famille;
-                article.ID_fournisseur = id_fournisseur;
-                context.Update(article);
-                context.SaveChanges();
-            
-
+            article.Prix_unitaire = prix_unitaire;
+            article.Prix_carton = prix_carton;
+            article.Annee = annee;
+            article.ID_famille = id_famille;
+            article.ID_fournisseur = id_fournisseur;
 
             context.Update(article);
             context.SaveChanges();
         }
+
         [HttpDelete(Name = "DeleteArticle")]
         public void DeleteArticle(int id)
         {
             using StiveController context = new();
 
             Article article = context.Articles.Where(a=> a.Id == id).First();
-          
 
             context.Remove(article);
             context.SaveChanges();
         }
 
-        [HttpGet(Name = "GetAllArticles")]
-        public List<Article> GetAllArticles()
+        [HttpGet(Name = "GetAllArticle")]
+        public List<Article> GetAllArticle()
         {
             using StiveController context = new();
 
@@ -68,7 +62,7 @@ namespace StiveAPI.Controllers
             return articles;
         }
 
-        [HttpGet(Name = "GetArticlesById")]
+        [HttpGet(Name = "GetArticleById")]
         public Article GetArticleById(int id)
         {
             using StiveController context = new();
@@ -76,7 +70,5 @@ namespace StiveAPI.Controllers
             Article article = context.Articles.Where(a=> a.Id == id).First();
             return article;
         }
-
-
     }
 }

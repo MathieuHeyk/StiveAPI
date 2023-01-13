@@ -4,12 +4,9 @@ using StiveAPI.Models;
 
 namespace StiveAPI.Controllers
 {
-
     [ApiController]
     [Route("[controller]/[action]")]
-
     public class FamilleController
-
     {
         [HttpPost(Name = "AddFamille")]
         public void AddFamille(string Libelle)
@@ -33,8 +30,8 @@ namespace StiveAPI.Controllers
 
             context.Update(famille);
             context.SaveChanges();
-
         }
+
         [HttpDelete(Name = "DeleteFamille")]
         public void DeleteFamille(int id)
         {
@@ -43,16 +40,17 @@ namespace StiveAPI.Controllers
 
             context.Remove(famille);
             context.SaveChanges();
-
         }
+
         [HttpGet(Name = "GetAllFamille")]
-        public List<Famille> GetAllfamilles()
+        public List<Famille> GetAllFamille()
         {
             using StiveController context = new();
 
             List<Famille> famille = context.Familles.ToList();
             return famille;
         }
+
         [HttpGet(Name = "GetFamilleById")]
         public Famille GetFamilleById(int id)
         {
@@ -61,7 +59,6 @@ namespace StiveAPI.Controllers
             Famille famille = context.Familles.Where(c => c.Id_famille == id).First();
             return famille;
         }
-         
     }
 }
 

@@ -2,7 +2,6 @@
 using StiveAPI.Helpers;
 using StiveAPI.Models;
 
-
 namespace StiveAPI.Controllers
 {
     [ApiController]
@@ -14,6 +13,7 @@ namespace StiveAPI.Controllers
         {
             using StiveController context = new();
             Utilisateur utilisateur = new();
+
             utilisateur.Nom=Nom;
             utilisateur.Prenom=Prenom;
             utilisateur.Email=Email;
@@ -21,9 +21,11 @@ namespace StiveAPI.Controllers
             utilisateur.Telephone=Telephone;
             utilisateur.Id_role=Id_role;
             utilisateur.Id_lieu=Id_lieu;
+         
             context.Add(utilisateur);
             context.SaveChanges();
         }
+
         [HttpPut(Name = "EditUtilisateur")]
         public void EditUtilisateur(int id, string Nom, string Prenom, string Email, string Password, string Telephone, int Id_lieu, int Id_role)
         {
@@ -41,6 +43,7 @@ namespace StiveAPI.Controllers
             context.Update(utilisateur);
             context.SaveChanges();
         }
+
         [HttpDelete(Name = "DeleteUtilisateur")]
         public void DeleteUtilisateur(int id)
         {
@@ -51,7 +54,8 @@ namespace StiveAPI.Controllers
             context.Remove(utilisateur);
             context.SaveChanges() ; 
         }
-        [HttpGet(Name = "GetAllUtilisateurs")]
+
+        [HttpGet(Name = "GetAllUtilisateur")]
         public List<Utilisateur> GetAllUtilisateur()
         {
             using StiveController context = new();
@@ -59,16 +63,14 @@ namespace StiveAPI.Controllers
             List<Utilisateur> utilisateurs = context.Utilisateurs.ToList();
             return utilisateurs;
         }
+
         [HttpGet(Name = "GetUtilisateurById")]
         public Utilisateur GetUtilisateurById(int id) 
         {
-            
             using StiveController context = new();
 
             Utilisateur utilisateur = context.Utilisateurs.Where(c => c.Id_utilisateur == id).First();
             return utilisateur;
         }
     }
-    
-
 }
