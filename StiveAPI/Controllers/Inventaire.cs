@@ -23,7 +23,7 @@ namespace StiveAPI.Controllers
             context.SaveChanges();
 
         }
-        [HttpPost(Name = "EditInventaire")]
+        [HttpPut(Name = "EditInventaire")]
         public void EditInventaire(int id, int id_article, int quantite, string date, int id_utilisateur)
         {
             using StiveController context = new();
@@ -37,7 +37,7 @@ namespace StiveAPI.Controllers
             context.Update(inventaire);
             context.SaveChanges();
         }
-        [HttpDelete(Name = "GettAllnventaire")]
+        [HttpGet(Name = "GetAllInventaire")]
         public List<Inventaire> GetAllInventaires()
         {
             using StiveController context = new();
@@ -53,8 +53,6 @@ namespace StiveAPI.Controllers
             using StiveController context = new();
 
             Inventaire inventaire = context.Inventaires.Where(a => a.Id_inventaire == id).First();
-
-            List<Inventaire> inventaires = context.Inventaires.ToList();
             return inventaire;
         }
         [HttpDelete(Name = "DeleteInventaire")]
