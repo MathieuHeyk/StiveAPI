@@ -53,7 +53,7 @@ namespace StiveAPI.Controllers
             List<Famille> famille = context.Familles.ToList();
             return famille;
         }
-        [HttpGet(Name = "GetFammileById")]
+        [HttpGet(Name = "GetFamilleById")]
         public Famille GetFamilleById(int id)
         {
             using StiveController context = new();
