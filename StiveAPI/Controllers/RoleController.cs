@@ -47,7 +47,7 @@ namespace StiveAPI.Controllers
 
         }
 
-        [HttpGet(Name = "GetAllRoles")]
+        [HttpGet(Name = "GetAllRole")]
         public List<Role> GetAllRoles()
         {
             using StiveController context = new();
